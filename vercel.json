@@ -1,0 +1,10 @@
+{
+  "env": {
+    "MONGODB_URI": "mongodb+srv://amin:A7667min@cluster0.ikvxk.mongodb.net/my-website?retryWrites=true&w=majority"
+  },
+  "build": {
+    "env": {
+      "MONGODB_URI": "mongodb+srv://amin:A7667min@cluster0.ikvxk.mongodb.net/my-website?retryWrites=true&w=majority"
+    }
+  }
+}
