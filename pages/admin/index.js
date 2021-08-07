@@ -24,10 +24,7 @@ const Admin = () => {
   const [notification, setNotification] = useState('');
   const fetcher = (url) =>
     axios.get(url, { headers: makeAxiosHeader() }).then((res) => res.data.data);
-  const { data: posts, error } = useSWR(
-    'http://localhost:3000/api/admin/posts',
-    fetcher
-  );
+  const { data: posts, error } = useSWR('/api/admin/posts', fetcher);
   const [filteredPosts, setFilteredPosts] = useState(null);
 
   useEffect(() => {
@@ -36,12 +33,12 @@ const Admin = () => {
 
   const DeletePost = (id) => {
     axios
-      .delete('http://localhost:3000/api/admin/posts', {
+      .delete('/api/admin/posts', {
         data: { id },
         headers: makeAxiosHeader(),
       })
       .then((res) => {
-        mutate('http://localhost:3000/api/admin/posts');
+        mutate('/api/admin/posts');
         setNotification(res.data.msg);
         setTimeout(() => {
           setNotification('');

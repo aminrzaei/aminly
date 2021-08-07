@@ -14,7 +14,7 @@ const useUser = (redirect) => {
       },
     };
     axios
-      .get('http://localhost:3000/api/user', config)
+      .get('/api/user', config)
       .then((res) => {
         const userType = res.data.userType;
         if (userType === 'admin') {

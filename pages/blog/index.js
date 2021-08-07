@@ -12,10 +12,7 @@ import axios from 'axios';
 const Blog = () => {
   const [isToTopVisible, setIsToTopVisible] = useState(false);
   const fetcher = (url) => axios.get(url).then((res) => res.data.data);
-  const { data: posts, error } = useSWR(
-    'http://localhost:3000/api/posts',
-    fetcher
-  );
+  const { data: posts, error } = useSWR('/api/posts', fetcher);
   useEffect(() => {
     const toggleVisibility = () => {
       if (window.pageYOffset > 100) {
