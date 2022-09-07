@@ -1,16 +1,16 @@
-import Head from 'next/head';
-import Link from 'next/link';
+import Head from "next/head";
+import Link from "next/link";
 
-import AboutIcon from '../public/icons/AboutIcon';
-import BlogIcon from '../public/icons/BlogIcon';
-import ContactIcon from '../public/icons/ContactIcon';
-import ProjectsIcon from '../public/icons/ProjectsIcon';
+import AboutIcon from "../public/icons/AboutIcon";
+import BlogIcon from "../public/icons/BlogIcon";
+import ContactIcon from "../public/icons/ContactIcon";
+import ProjectsIcon from "../public/icons/ProjectsIcon";
 
 const Home = () => {
   return (
     <>
       <Head>
-        <title>Amin Rezaei</title>
+        <title>Amin Rezaei | امین رضائی</title>
       </Head>
       <div className="home-menu">
         <Link href="/about">

@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import Head from 'next/head';
-import Link from 'next/link';
+import React, { useState, useEffect } from "react";
+import Head from "next/head";
+import Link from "next/link";
 
-import HomeIcon from '../../public/icons/HomeIcon';
-import ClockIcon from '../../public/icons/ClockIcon';
-import PenIcon from '../../public/icons/PenIcon';
-import UpIcon from '../../public/icons/UpIcon';
-import useSWR from 'swr';
-import axios from 'axios';
+import HomeIcon from "../../public/icons/HomeIcon";
+import ClockIcon from "../../public/icons/ClockIcon";
+import PenIcon from "../../public/icons/PenIcon";
+import UpIcon from "../../public/icons/UpIcon";
+import useSWR from "swr";
+import axios from "axios";
 
 const Blog = () => {
   const [isToTopVisible, setIsToTopVisible] = useState(false);
   const fetcher = (url) => axios.get(url).then((res) => res.data.data);
-  const { data: posts, error } = useSWR('/api/posts', fetcher);
+  const { data: posts, error } = useSWR("/api/posts", fetcher);
   useEffect(() => {
     const toggleVisibility = () => {
       if (window.pageYOffset > 100) {
@@ -22,9 +22,9 @@ const Blog = () => {
       }
     };
 
-    window.addEventListener('scroll', toggleVisibility);
+    window.addEventListener("scroll", toggleVisibility);
 
-    return () => window.removeEventListener('scroll', toggleVisibility);
+    return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
   const RenderPosts = () => {
     if (posts) {
@@ -45,7 +45,7 @@ const Blog = () => {
             <div className="post_details">
               <div className="post__firs-row">
                 <img
-                  src="/user-img/user12345.png"
+                  src="https://avatars.dicebear.com/api/adventurer/amin-re.svg"
                   className="author__img"
                 ></img>
                 <span className="author__details">
@@ -57,7 +57,7 @@ const Blog = () => {
                     <ClockIcon />
                   </span>
                   <p className="time__amount">
-                    {post.time_to_read.tens === '0'
+                    {post.time_to_read.tens === "0"
                       ? `${post.time_to_read.ones} `
                       : `${post.time_to_read.tens}${post.time_to_read.ones} `}
                     minutes
@@ -101,7 +101,7 @@ const Blog = () => {
           onClick={() =>
             window.scrollTo({
               top: 0,
-              behavior: 'smooth',
+              behavior: "smooth",
             })
           }
         >
