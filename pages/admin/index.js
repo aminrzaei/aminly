@@ -1,30 +1,40 @@
-import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
+import React, { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 
-import SearchIcon from '../../public/icons/SearchIcon';
-import useSWR, { mutate } from 'swr';
+import SearchIcon from "../../public/icons/SearchIcon";
+import useSWR, { mutate } from "swr";
 
-import DeleteIcon from '../../public/icons/DeleteIcon';
-import EditIcon from '../../public/icons/EditIcon';
+import DeleteIcon from "../../public/icons/DeleteIcon";
+import EditIcon from "../../public/icons/EditIcon";
 
-import axios from 'axios';
+import axios from "axios";
 
-import useUser from '../../hooks/useUser';
+import useUser from "../../hooks/useUser";
 
 const makeAxiosHeader = () => {
-  const token = window.localStorage.getItem('token');
+  const token = window.localStorage.getItem("token");
   return {
     Authentication: `Bearer ${token}`,
   };
 };
 
 const Admin = () => {
+  let posts = [];
+  let error = false;
   const router = useRouter();
-  const [user, loading] = useUser({ redirectTo: '/auth' });
-  const [notification, setNotification] = useState('');
-  const fetcher = (url) =>
-    axios.get(url, { headers: makeAxiosHeader() }).then((res) => res.data.data);
-  const { data: posts, error } = useSWR('/api/admin/posts', fetcher);
+  const [user, loading] = useUser({ redirectTo: "/auth" });
+  if (Object.keys(user) !== 0) {
+    const fetcher = (url) =>
+      axios
+        .get(url, { headers: makeAxiosHeader() })
+        .then((res) => res.data.data);
+    const res = useSWR("/api/admin/posts", fetcher);
+    posts = res["data"];
+    error = res["error"];
+  }
+
+  const [notification, setNotification] = useState("");
+
   const [filteredPosts, setFilteredPosts] = useState(null);
 
   useEffect(() => {
@@ -33,24 +43,24 @@ const Admin = () => {
 
   const DeletePost = (id) => {
     axios
-      .delete('/api/admin/posts', {
+      .delete("/api/admin/posts", {
         data: { id },
         headers: makeAxiosHeader(),
       })
       .then((res) => {
-        mutate('/api/admin/posts');
+        mutate("/api/admin/posts");
         setNotification(res.data.msg);
         setTimeout(() => {
-          setNotification('');
+          setNotification("");
         }, 5000);
       })
       .catch((err) => console.log(err));
   };
   const EditPost = (id) => {
     console.log(id);
-    setNotification('Not availabel now :)');
+    setNotification("Not availabel now :)");
     setTimeout(() => {
-      setNotification('');
+      setNotification("");
     }, 5000);
   };
 
@@ -106,7 +116,7 @@ const Admin = () => {
     return (
       <>
         {!notification.length ? null : (
-          <div className="notification" style={{ top: '15px' }}>
+          <div className="notification" style={{ top: "15px" }}>
             <p className="notification__header">Notification</p>
             <p className="notification__msg">{notification}</p>
           </div>
@@ -131,16 +141,16 @@ const Admin = () => {
           <table className="admin__table">
             <tbody>
               <tr>
-                <th className="admin_table-title" style={{ width: '40px' }}>
+                <th className="admin_table-title" style={{ width: "40px" }}>
                   Idx
                 </th>
-                <th className="admin_table-title" style={{ width: '500px' }}>
+                <th className="admin_table-title" style={{ width: "500px" }}>
                   Title
                 </th>
-                <th className="admin_table-title" style={{ width: '145px' }}>
+                <th className="admin_table-title" style={{ width: "145px" }}>
                   Date Created
                 </th>
-                <th className="admin_table-title" style={{ width: '170px' }}>
+                <th className="admin_table-title" style={{ width: "170px" }}>
                   Date Updated
                 </th>
                 <th className="admin_table-title">Actions</th>
@@ -151,15 +161,15 @@ const Admin = () => {
           {!posts && <div>Loading ...</div>}
           <div
             className="creat-post"
-            onClick={() => router.push('/admin/create')}
+            onClick={() => router.push("/admin/create")}
           >
             New Post +
           </div>
           <div
             className="logout"
             onClick={() => {
-              window.localStorage.removeItem('token');
-              router.push('/auth');
+              window.localStorage.removeItem("token");
+              router.push("/auth");
             }}
           >
             Log out
@@ -169,7 +179,7 @@ const Admin = () => {
     );
   } else {
     return (
-      <div style={{ textAlign: 'center', marginTop: '200px' }}>
+      <div style={{ textAlign: "center", marginTop: "200px" }}>
         'Wait... :)'
       </div>
     );
