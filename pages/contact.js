@@ -186,12 +186,12 @@ const Contact = () => {
             <p className="social__name">LinkedIn</p>
             <p className="social__space">_______________</p>
             <a
-              href="https://www.linkedin.com/in/the-amin/"
+              href="https://www.linkedin.com/in/itisamin/"
               className="social__address"
               title="LinkedIn"
               target="_blank"
             >
-              <p>@the-amin</p>
+              <p>@itisamin</p>
             </a>
           </span>
           <span className="social__item">
@@ -204,18 +204,6 @@ const Contact = () => {
               target="_blank"
             >
               <p>@it.is.amin</p>
-            </a>
-          </span>
-          <span className="social__item">
-            <p className="social__name">Twitter</p>
-            <p className="social__space">_______________</p>
-            <a
-              href="https://twitter.com/it_is_amin"
-              className="social__address"
-              title="Twitter"
-              target="_blank"
-            >
-              <p>@it_is_amin</p>
             </a>
           </span>
         </div>
