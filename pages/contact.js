@@ -183,6 +183,18 @@ const Contact = () => {
         <div className="contact__social">
           <p className="social__header">Social Medias 🏀</p>
           <span className="social__item">
+            <p className="social__name">GitHub</p>
+            <p className="social__space">_______________</p>
+            <a
+              href="https://github.com/aminrzaei"
+              className="social__address"
+              title="GitHub"
+              target="_blank"
+            >
+              <p>aminrzaei</p>
+            </a>
+          </span>
+          <span className="social__item">
             <p className="social__name">LinkedIn</p>
             <p className="social__space">_______________</p>
             <a

@@ -22,7 +22,7 @@ body {
   color: #fff;
   overflow-x: hidden;
   background-color: #040404;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 body::-webkit-scrollbar {
   width: 12px;
@@ -174,9 +174,6 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
-.project__img {
-  height: 430px;
 }
 .project__title {
   font-weight: 500;
@@ -679,7 +676,7 @@ body::-webkit-scrollbar-thumb {
   padding: 3px;
 }
 .pform__cropped-image-container::after {
-  content: 'Image Preview';
+  content: "Image Preview";
   color: #8c8c8c;
   position: absolute;
   z-index: -1;
@@ -961,9 +958,6 @@ body::-webkit-scrollbar-thumb {
   }
   .project-row {
     margin-top: 30px;
-  }
-  .project__img {
-    display: none;
   }
   .project__title {
     font-size: 27px;

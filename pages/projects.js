@@ -98,7 +98,6 @@ const Projects = () => {
               </ul>
             </div>
           </div>
-          <img className="project__img" src="/project.png" />
         </div>
       </div>
     </>

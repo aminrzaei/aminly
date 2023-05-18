@@ -42,7 +42,7 @@ const Home = () => {
         <div className="home-text">
           <span className="home-text__hi">Hi, I'm</span>
           <h1 className="home-text__name">Amin Rezaei</h1>
-          <span className="home-text__skills">Web, Mobile, IOT Developer</span>
+          <span className="home-text__skills">Front-End Developer</span>
           <span className="home-text__skills">UI, UX Designer</span>
         </div>
         <div className="home-img-wrapper">
