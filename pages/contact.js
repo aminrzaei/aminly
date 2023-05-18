@@ -203,7 +203,7 @@ const Contact = () => {
               title="LinkedIn"
               target="_blank"
             >
-              <p>@itisamin</p>
+              <p>itisamin</p>
             </a>
           </span>
           <span className="social__item">

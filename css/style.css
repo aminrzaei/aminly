@@ -6,6 +6,7 @@
   box-sizing: border-box;
 }
 a {
+  color: inherit;
   text-decoration: none;
 }
 a:active,
@@ -443,13 +444,13 @@ body::-webkit-scrollbar-thumb {
   flex-direction: column;
   margin-bottom: 20px;
   border-radius: 20px;
-  border-bottom: 1px solid #0acbe17e;
+  border-bottom: 3px solid #0acbe17e;
   padding-bottom: 10px;
   cursor: pointer;
   transition: all 0.3s;
 }
 .post:hover {
-  border-bottom: 1px solid #e16b0a7e;
+  border-bottom: 3px solid #e16b0a7e;
 }
 .post__img {
   width: 100%;
