@@ -1,10 +1,10 @@
-import Head from 'next/head';
-import Link from 'next/link';
+import Head from "next/head";
+import Link from "next/link";
 
-import AboutIcon from '../public/icons/AboutIcon';
-import BlogIcon from '../public/icons/BlogIcon';
-import ContactIcon from '../public/icons/ContactIcon';
-import ProjectsIcon from '../public/icons/ProjectsIcon';
+import AboutIcon from "../public/icons/AboutIcon";
+import BlogIcon from "../public/icons/BlogIcon";
+import ContactIcon from "../public/icons/ContactIcon";
+import ProjectsIcon from "../public/icons/ProjectsIcon";
 
 const Projects = () => {
   return (
@@ -43,36 +43,57 @@ const Projects = () => {
         <div className="project-row">
           <div className="project__projects">
             <div className="project__project">
-              <h2 className="project__title">Smart Home</h2>
+              <h2 className="project__title">Artatracker</h2>
               <span className="project__info">
                 <p className="project__tag">#Front-end</p>
-                <p className="project__website">website.com</p>
-                <p className="project__date">2020 July - 2021 Aug</p>
+                <p className="project__website">Artatrack.ir</p>
+                <p className="project__date">Jan 2022 – Jan 2023</p>
               </span>
               <ul className="project__items">
                 <li className="project__item">
-                  Design a nice application that is useful for IOT purposes.
+                  I developed, documented, and maintained the React front end to
+                  deliver responsive, mobile-first web experiences enhanced and
+                  powered by Webpack and Websocket based on Figma mockups.
                 </li>
                 <li className="project__item">
-                  Design a nice application that is useful for IOT purposes.
+                  Increase the site’s overall security by up to 30% by securing
+                  the authorization flow using a refresh token and HTTP-only
+                  cookie strategy.
                 </li>
-                <li className="project__item">Design a nice application.</li>
+                <li className="project__item">
+                  Improved site speed, load times, and user engagement by over
+                  50% by optimizing the codebase using tools like React
+                  Profiler, Chrome Lighthouse, and Google Web Vitals.
+                </li>
+                <li className="project__item">
+                  Developed a lightweight (only 5 kB) and SEO-optimized script
+                  that users could embed on their websites. The purpose of this
+                  script was to send data to our record service.
+                </li>
               </ul>
             </div>
 
             <div className="project__project">
               <h2 className="project__title">Mocatag</h2>
               <span className="project__info">
-                <p className="project__tag">#Mobile</p>
-                <p className="project__website">website.com</p>
-                <p className="project__date">2018 July - 2020 May</p>
+                <p className="project__tag">#Front-end</p>
+                <p className="project__website">mocatag.ir</p>
+                <p className="project__date">Dec 2018 – Apr 2020</p>
               </span>
               <ul className="project__items">
-                <li className="project__item">Design a nice application.</li>
-                <li className="project__item">Design a nice UI/UX.</li>
                 <li className="project__item">
-                  Design a nice application that is useful for IOT purposes.
-                  lorem ipsum.
+                  I implemented a responsive customers and sellers’ panel front
+                  end using JavaScript and JQuery.
+                </li>
+                <li className="project__item">
+                  Bring the website to the 1st page of Google search results by
+                  implementing on-page SEO.
+                </li>
+                <li className="project__item">
+                  My design expertise also extended to creating wireframes and
+                  mockups for both desktop and mobile devices using Adobe XD,
+                  leveraging customer feedback to enhance the website’s UI/UX
+                  further.
                 </li>
               </ul>
             </div>
