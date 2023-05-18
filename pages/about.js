@@ -1,10 +1,10 @@
-import Head from 'next/head';
-import Link from 'next/link';
+import Head from "next/head";
+import Link from "next/link";
 
-import AboutIcon from '../public/icons/AboutIcon';
-import BlogIcon from '../public/icons/BlogIcon';
-import ContactIcon from '../public/icons/ContactIcon';
-import ProjectsIcon from '../public/icons/ProjectsIcon';
+import AboutIcon from "../public/icons/AboutIcon";
+import BlogIcon from "../public/icons/BlogIcon";
+import ContactIcon from "../public/icons/ContactIcon";
+import ProjectsIcon from "../public/icons/ProjectsIcon";
 
 const About = () => {
   return (
@@ -42,29 +42,24 @@ const About = () => {
       <div className="about-main">
         <p className="about__header">About Me</p>
         <p className="about__hi">Hi From Amin Rezaei 😉</p>
-        <p className="about__introduce">
-          I'm a Web, Mobile Application Developer.
-        </p>
+        <p className="about__introduce">I'm a Front-End Developer.</p>
         <div className="about__row">
           <div className="about__skills">
             <p className="skills__header">Skills 💪 </p>
             <div className="skills__item">
               <p className="skills__area">Web Development</p>
               <p className="skills__examples">
-                React, Next, Vue, Express, Laravel, MongoDB, MySQL ...
+                React, Next, TypeScript, Redux toolkit, Vue, Angular, Nest.js,
+                Express, SQL, MongoDB ...
               </p>
             </div>
             <div className="skills__item">
               <p className="skills__area">Mobile Application Development</p>
-              <p className="skills__examples">
-                React Native, Flutter, Redux ...
-              </p>
+              <p className="skills__examples">React Native, Flutter ...</p>
             </div>
             <div className="skills__item">
               <p className="skills__area">UI/UX</p>
-              <p className="skills__examples">
-                Adobe XD, Photoshop, Illustrator, After Effect, Premier ...
-              </p>
+              <p className="skills__examples">Figma, Adobe XD ...</p>
             </div>
             <div className="skills__item">
               <p className="skills__area">IOT</p>
