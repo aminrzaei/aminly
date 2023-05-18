@@ -1,23 +1,23 @@
-import { useState } from 'react';
-import { mutate } from 'swr';
+import { useState } from "react";
+import { mutate } from "swr";
 
-import { useRouter } from 'next/router';
-import Head from 'next/head';
-import Link from 'next/link';
+import { useRouter } from "next/router";
+import Head from "next/head";
+import Link from "next/link";
 
-import AboutIcon from '../public/icons/AboutIcon';
-import BlogIcon from '../public/icons/BlogIcon';
-import ContactIcon from '../public/icons/ContactIcon';
-import ProjectsIcon from '../public/icons/ProjectsIcon';
+import AboutIcon from "../public/icons/AboutIcon";
+import BlogIcon from "../public/icons/BlogIcon";
+import ContactIcon from "../public/icons/ContactIcon";
+import ProjectsIcon from "../public/icons/ProjectsIcon";
 
 const Contact = () => {
   const router = useRouter();
-  const [notification, setNotification] = useState('');
+  const [notification, setNotification] = useState("");
   const [errors, setErrors] = useState({});
   const [form, setForm] = useState({
-    title: '',
-    email: '',
-    msg: '',
+    title: "",
+    email: "",
+    msg: "",
   });
 
   const handleChange = (e) => {
@@ -36,14 +36,14 @@ const Contact = () => {
 
     if (Object.keys(errs).length === 0) {
       postData(form);
-      setNotification('Your Message Submited!');
+      setNotification("Your Message Submited!");
       setTimeout(() => {
-        setNotification('');
+        setNotification("");
       }, 5000);
       setForm({
-        title: '',
-        email: '',
-        msg: '',
+        title: "",
+        email: "",
+        msg: "",
       });
       setErrors({});
     } else {
@@ -53,19 +53,19 @@ const Contact = () => {
 
   const formValidate = () => {
     let err = {};
-    if (!form.title) err.title = 'Title is required';
-    if (!form.email) err.email = 'Email is required';
-    if (!form.msg) err.msg = 'Message is required';
+    if (!form.title) err.title = "Title is required";
+    if (!form.email) err.email = "Email is required";
+    if (!form.msg) err.msg = "Message is required";
     return err;
   };
 
   const postData = async (form) => {
     try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
+      const res = await fetch("/api/contact", {
+        method: "POST",
         headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
+          Accept: "application/json",
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(form),
       });
@@ -74,7 +74,7 @@ const Contact = () => {
         throw new Error(res.status);
       }
     } catch (error) {
-      console.log('Failed to submit message');
+      console.log("Failed to submit message");
     }
   };
 
@@ -133,7 +133,7 @@ const Contact = () => {
                   onChange={handleChange}
                   id="form__title"
                   className={
-                    !errors.title ? 'form__input' : 'form__input input--error'
+                    !errors.title ? "form__input" : "form__input input--error"
                   }
                   placeholder="Message title"
                 ></input>
@@ -151,7 +151,7 @@ const Contact = () => {
                   onChange={handleChange}
                   id="form__email"
                   className={
-                    !errors.email ? 'form__input' : 'form__input input--error'
+                    !errors.email ? "form__input" : "form__input input--error"
                   }
                   placeholder="example.@email.com"
                 ></input>
@@ -168,7 +168,7 @@ const Contact = () => {
                 onChange={handleChange}
                 id="form__message"
                 className={
-                  !errors.msg ? 'form__textarea' : 'form__textarea input--error'
+                  !errors.msg ? "form__textarea" : "form__textarea input--error"
                 }
                 placeholder="Enter your message here ..."
                 rows="8"
@@ -195,15 +195,15 @@ const Contact = () => {
             </a>
           </span>
           <span className="social__item">
-            <p className="social__name">Instagram</p>
+            <p className="social__name">Email</p>
             <p className="social__space">_______________</p>
             <a
-              href="https://www.instagram.com/it.is.amin/"
+              href="mailto:aminrezaei@proton.me"
               className="social__address"
-              title="Instagram"
+              title="Email"
               target="_blank"
             >
-              <p>@it.is.amin</p>
+              <p>aminrezaei@proton.me</p>
             </a>
           </span>
         </div>
